@@ -1,6 +1,7 @@
 package com.sajan.caveairesp;
 
 import com.sajan.caveairesp.modules.CaveAirESP;
+import com.sajan.caveairesp.modules.ChatBlock;
 import meteordevelopment.meteorclient.addons.MeteorAddon;
 import meteordevelopment.meteorclient.systems.modules.Modules;
 import meteordevelopment.meteorclient.systems.modules.Category;
@@ -29,7 +30,6 @@ public class CaveAirESPAddon extends MeteorAddon {
         return "https://github.com/";
     }
 
-    @Override
     public String getName() {
         return "Cave Air ESP";
     }
