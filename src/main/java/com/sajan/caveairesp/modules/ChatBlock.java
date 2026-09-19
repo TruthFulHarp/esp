@@ -40,7 +40,7 @@ public class ChatBlock extends Module {
 
     @EventHandler
     private void onSendMessage(SendMessageEvent event) {
-        String message = event.message();
+        String message = event.message;
 
         if (message == null || message.isEmpty()) {
             event.cancel();
