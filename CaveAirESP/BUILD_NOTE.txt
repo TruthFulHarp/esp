@@ -1,0 +1,1 @@
+The Gradle wrapper JAR is not embedded in this generated archive. If GitHub Actions is used, Gradle setup supplies Gradle automatically. For local Windows builds, install Gradle or copy gradlew/gradle-wrapper.jar from the official Meteor addon template.
