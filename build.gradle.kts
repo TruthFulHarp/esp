@@ -1,5 +1,5 @@
 plugins {
-    id("fabric-loom") version "1.16-SNAPSHOT"
+    id("net.fabricmc.fabric-loom") version "1.16-SNAPSHOT"
     `maven-publish`
 }
 
@@ -19,10 +19,9 @@ repositories {
 
 dependencies {
     minecraft("com.mojang:minecraft:${project.property("minecraft_version")}")
-    mappings(loom.officialMojangMappings())
-    modImplementation("net.fabricmc:fabric-loader:${project.property("loader_version")}")
-    modImplementation("net.fabricmc.fabric-api:fabric-api:${project.property("fabric_version")}")
-    modImplementation("meteordevelopment:meteor-client:${project.property("meteor_version")}")
+    implementation("net.fabricmc:fabric-loader:${project.property("loader_version")}")
+    implementation("net.fabricmc.fabric-api:fabric-api:${project.property("fabric_version")}")
+    implementation("meteordevelopment:meteor-client:${project.property("meteor_version")}")
 }
 
 tasks.processResources {
