@@ -25,14 +25,14 @@ dependencies {
     modImplementation("meteordevelopment:meteor-client:${project.property("meteor_version")}")
 }
 
-tasks.processResources { 
+tasks.processResources {
     inputs.property("version", project.version)
     inputs.property("minecraft_version", project.property("minecraft_version"))
     filesMatching("fabric.mod.json") {
-        expand(
+        expand(mapOf(
             "version" to project.version,
             "minecraft_version" to project.property("minecraft_version")
-        )
+        ))
     }
 }
 
