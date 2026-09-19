@@ -7,7 +7,7 @@ group = project.property("maven_group")!!
 version = project.property("mod_version")!!
 
 base {
-    archivesName = project.property("archives_base_name")!!
+    archivesName.set(project.property("archives_base_name") as String)
 }
 
 repositories {
@@ -25,7 +25,7 @@ dependencies {
     modImplementation("meteordevelopment:meteor-client:${project.property("meteor_version")}")
 }
 
-processResources {
+tasks.processResources { 
     inputs.property("version", project.version)
     inputs.property("minecraft_version", project.property("minecraft_version"))
     filesMatching("fabric.mod.json") {
