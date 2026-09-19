@@ -3,6 +3,7 @@ package com.sajan.caveairesp.modules;
 import com.sajan.caveairesp.CaveAirESPAddon;
 import com.sajan.caveairesp.scanner.AirCluster;
 import com.sajan.caveairesp.scanner.AirClusterScanner;
+import meteordevelopment.meteorclient.events.render.Render3DEvent;
 import meteordevelopment.meteorclient.events.world.TickEvent;
 import meteordevelopment.meteorclient.settings.*;
 import meteordevelopment.meteorclient.systems.modules.Module;
@@ -10,7 +11,6 @@ import meteordevelopment.meteorclient.utils.render.color.SettingColor;
 import meteordevelopment.orbit.EventHandler;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
-import net.minecraft.client.renderer.RenderType;
 import meteordevelopment.meteorclient.renderer.ShapeMode;
 import meteordevelopment.meteorclient.utils.render.RenderUtils;
 
@@ -92,12 +92,10 @@ public class CaveAirESP extends Module {
         }
     }
 
-    @Override
-    public void render(meteordevelopment.meteorclient.events.render.Render3DEvent event) {
+    @EventHandler
+    private void onRender(Render3DEvent event) {
         synchronized (clusters) {
             for (AirCluster cluster : clusters) {
-                // Render only the cluster's occupied air blocks. ShapeMode and colors
-                // match Meteor's standard ESP settings.
                 for (BlockPos p : cluster.blocks()) {
                     event.renderer.box(
                         p,
