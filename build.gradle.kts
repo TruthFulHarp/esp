@@ -13,8 +13,8 @@ base {
 repositories {
     mavenCentral()
     maven { url = uri("https://maven.fabricmc.net/") }
-    maven { url = uri("https://maven.meteordevelopment.com/releases") }
-    maven { url = uri("https://maven.meteordevelopment.com/snapshots") }
+    maven { url = uri("https://maven.meteordev.org/releases") }
+    maven { url = uri("https://maven.meteordev.org/snapshots") }
 }
 
 dependencies {
